@@ -105,10 +105,10 @@ const HomePage = () => {
     setShowSuccess(false); // Reset success state
 
     try {
-      await axios.post("http://localhost:8000/api/v1/users/applicant-user", formData, {
+      await axios.post("https://resume-ats-score-checker-serverside.onrender.com/api/v1/users/applicant-user", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      const scoreResponse = await axios.get("http://localhost:8000/api/v1/users/applicant-resume-score");
+      const scoreResponse = await axios.get("https://resume-ats-score-checker-serverside.onrender.com/api/v1/users/applicant-resume-score");
 
         // Step 3: Store the actual score data
         const predictionData = scoreResponse.data?.data?.prediction;

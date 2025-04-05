@@ -92,7 +92,7 @@ const RecruiterDashboardPage = () => {
 
     try {
       
-      await axios.post("http://localhost:8000/api/v1/users/recruter-user", formData, {
+      await axios.post("https://resume-ats-score-checker-serverside.onrender.com/api/v1/users/recruter-user", formData, {
         headers: {
            // Axios sets Content-Type automatically for FormData, but explicitly is fine too.
            // However, DO NOT manually set 'Content-Type': 'multipart/form-data' if you provide boundary; let axios handle it.
@@ -108,7 +108,7 @@ const RecruiterDashboardPage = () => {
 
       // Step 2: Fetch the scores calculated by the backend
       
-      const scoreResponse = await axios.get("http://localhost:8000/api/v1/users/recruter-resume-score");
+      const scoreResponse = await axios.get("https://resume-ats-score-checker-serverside.onrender.com/api/v1/users/recruter-resume-score");
       console.log("Scores fetched:", scoreResponse.data);
 
       
